@@ -1,177 +1,150 @@
 ﻿using System;
-
 namespace ConsoleApp1
 {
     internal class Program
     {
-        static ConsoleKey global_key = ConsoleKey.F1;
 
+
+
+     //для вывода анектодота нажмите G
+     // возможно он там не один
+
+
+
+        static int[] tonal = new int[12];
+        static ConsoleKey change = ConsoleKey.F1;
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Для выхода нажмите клавишу F4");
+            Console.Write("Для выхода нажмите клавишу ");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("ESC");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Управление пианино осуществляется через клавиши q w e r t y u i o p [ ]");
             Console.ResetColor();
             do
             {
-                if (global_key == ConsoleKey.F1)
-                {
-                    octava_1();
-                }
-                else if (global_key == ConsoleKey.F2)
-                {
-                    octava_2();
-                }
+                tonal = octave_change(change);
+                change = pianino(tonal);
             }
-            while (global_key != ConsoleKey.F4);
+            while (change != ConsoleKey.Escape);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Вы вышли из пианино");
             Console.ResetColor();
         }
 
-        static void octava_1()
+        static ConsoleKey pianino(int[] tonal)
         {
-            int[] firstOctave = new int[] { 261, 277, 293, 311, 329, 349, 369, 392, 415, 440, 466, 493 };
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Вы были переключены на первую актаву");
-            Console.ResetColor();
-            while (global_key == ConsoleKey.F1)
+            while (true)
             {
-                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-                if (keyInfo.Key == ConsoleKey.F2)
+                ConsoleKeyInfo key = Console.ReadKey(true);
+                switch (key.Key)
                 {
-                    global_key = keyInfo.Key;
-                    return;
+                    case ConsoleKey.F1:
+                        change = key.Key;
+                        return change;
+                        break;
+                    case ConsoleKey.F2:
+                        change = key.Key;
+                        return change;
+                        break;
+                    case ConsoleKey.Escape:
+                        change = key.Key;
+                        return change;
+                        break;
+                    case ConsoleKey.G:
+                        change = key.Key;
+                        return change;
+                        break;
                 }
-                if (keyInfo.Key == ConsoleKey.F4)
-                {
-                    global_key = keyInfo.Key;
-                    return;
-                }
-                switch (keyInfo.Key)
+                switch (key.Key)
                 {
                     case ConsoleKey.Q:
-                        Console.Beep(firstOctave[0], 200);
+                        Console.Beep(tonal[0], 200);
                         break;
 
                     case ConsoleKey.W:
-                        Console.Beep(firstOctave[1], 200);
+                        Console.Beep(tonal[1], 200);
                         break;
 
                     case ConsoleKey.E:
-                        Console.Beep(firstOctave[2], 200);
+                        Console.Beep(tonal[2], 200);
                         break;
 
                     case ConsoleKey.R:
-                        Console.Beep(firstOctave[3], 200);
+                        Console.Beep(tonal[3], 200);
                         break;
 
                     case ConsoleKey.T:
-                        Console.Beep(firstOctave[4], 200);
+                        Console.Beep(tonal[4], 200);
                         break;
 
                     case ConsoleKey.Y:
-                        Console.Beep(firstOctave[5], 200);
+                        Console.Beep(tonal[5], 200);
                         break;
 
                     case ConsoleKey.U:
-                        Console.Beep(firstOctave[6], 200);
+                        Console.Beep(tonal[6], 200);
                         break;
 
                     case ConsoleKey.I:
-                        Console.Beep(firstOctave[7], 200);
+                        Console.Beep(tonal[7], 200);
                         break;
 
                     case ConsoleKey.O:
-                        Console.Beep(firstOctave[8], 200);
+                        Console.Beep(tonal[8], 200);
                         break;
 
                     case ConsoleKey.P:
-                        Console.Beep(firstOctave[9], 200);
+                        Console.Beep(tonal[9], 200);
                         break;
 
                     case ConsoleKey.Oem4:
-                        Console.Beep(firstOctave[10], 200);
+                        Console.Beep(tonal[10], 200);
                         break;
 
                     case ConsoleKey.Oem6:
-                        Console.Beep(firstOctave[11], 200);
+                        Console.Beep(tonal[11], 200);
                         break;
-
                 }
             }
         }
-
-        static void octava_2()
+        static int[] octave_change(ConsoleKey change)
+        {
+            int[] octave = new int[12];
+            switch (change)
+            {
+                case ConsoleKey.F1:
+                    octave = octave_1();
+                    break;
+                case ConsoleKey.F2:
+                    octave = octave_2();
+                    break;
+                case ConsoleKey.G:
+                    Console.Write("Подходит мужик к песочнице где играет маленькая девочка: \n- Девочка, хочешь конфетку? \n- Дяденька вы педофил? \n- Нет. \n- Ну а смысл тогда?\n\n");
+                    Console.WriteLine("ещё один?");
+                    string anekdot = Console.ReadLine();
+                    if (anekdot == "да" || anekdot == "Да" || anekdot == "Yea" || anekdot == "Yes" || anekdot == "lf" || anekdot == "Lf")
+                    {
+                        Console.Write("Штирлиц топил камин всю ночь \nна утро камин утонул\n\nПианино если что работает на первой актаве\n\n");
+                    }
+                    else Console.WriteLine("ну и ладно\nПианино если что работает на первой актаве\n\n");
+                    octave = octave_1();
+                    break;
+            }
+            return octave;
+        }
+        static int[] octave_1()
+        {
+            int[] firstOctave = new int[] { 261, 277, 293, 311, 329, 349, 369, 392, 415, 440, 466, 493 };
+            return firstOctave;
+        }
+        static int[] octave_2()
         {
             int[] secondOctave = new int[] { 523, 554, 587, 622, 659, 698, 739, 784, 830, 880, 932, 987 };
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Вы были переключены на первую актаву");
-            Console.ResetColor();
-            while (global_key == ConsoleKey.F2)
-            {
-                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-                if (keyInfo.Key == ConsoleKey.F1)
-                {
-                    global_key = keyInfo.Key;
-                    return;
-                }
-                if (keyInfo.Key == ConsoleKey.F4)
-                {
-                    global_key = keyInfo.Key;
-                    return;
-                }
-                switch (keyInfo.Key)
-                {
-                    case ConsoleKey.Q:
-                        Console.Beep(secondOctave[0], 200);
-                        break;
-
-                    case ConsoleKey.W:
-                        Console.Beep(secondOctave[1], 200);
-                        break;
-
-                    case ConsoleKey.E:
-                        Console.Beep(secondOctave[2], 200);
-                        break;
-
-                    case ConsoleKey.R:
-                        Console.Beep(secondOctave[3], 200);
-                        break;
-
-                    case ConsoleKey.T:
-                        Console.Beep(secondOctave[4], 200);
-                        break;
-
-                    case ConsoleKey.Y:
-                        Console.Beep(secondOctave[5], 200);
-                        break;
-
-                    case ConsoleKey.U:
-                        Console.Beep(secondOctave[6], 200);
-                        break;
-
-                    case ConsoleKey.I:
-                        Console.Beep(secondOctave[7], 200);
-                        break;
-
-                    case ConsoleKey.O:
-                        Console.Beep(secondOctave[8], 200);
-                        break;
-
-                    case ConsoleKey.P:
-                        Console.Beep(secondOctave[9], 200);
-                        break;
-
-                    case ConsoleKey.Oem4:
-                        Console.Beep(secondOctave[10], 200);
-                        break;
-
-                    case ConsoleKey.Oem6:
-                        Console.Beep(secondOctave[11], 200);
-                        break;
-
-                }
-            }
+            return secondOctave;
         }
     }
 }
