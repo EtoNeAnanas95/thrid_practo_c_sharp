@@ -44,11 +44,11 @@ namespace ConsoleApp1
                 {
                     case ConsoleKey.F1:
                         change = key.Key;
-                        octave_change(change);
+                        tonal = octave_change(change);
                         break;
                     case ConsoleKey.F2:
                         change = key.Key;
-                        octave_change(change);
+                        tonal = octave_change(change);
                         break;
                     case ConsoleKey.Escape:
                         change = key.Key;
@@ -62,51 +62,51 @@ namespace ConsoleApp1
                 switch (key.Key)
                 {
                     case ConsoleKey.Q:
-                        Console.Beep(tonal[0], 200);
+                        Console.Beep(tonal[0], 100);
                         break;
 
                     case ConsoleKey.W:
-                        Console.Beep(tonal[1], 200);
+                        Console.Beep(tonal[1], 100);
                         break;
 
                     case ConsoleKey.E:
-                        Console.Beep(tonal[2], 200);
+                        Console.Beep(tonal[2], 100);
                         break;
 
                     case ConsoleKey.R:
-                        Console.Beep(tonal[3], 200);
+                        Console.Beep(tonal[3], 100);
                         break;
 
                     case ConsoleKey.T:
-                        Console.Beep(tonal[4], 200);
+                        Console.Beep(tonal[4], 100);
                         break;
 
                     case ConsoleKey.Y:
-                        Console.Beep(tonal[5], 200);
+                        Console.Beep(tonal[5], 100);
                         break;
 
                     case ConsoleKey.U:
-                        Console.Beep(tonal[6], 200);
+                        Console.Beep(tonal[6], 100);
                         break;
 
                     case ConsoleKey.I:
-                        Console.Beep(tonal[7], 200);
+                        Console.Beep(tonal[7], 100);
                         break;
 
                     case ConsoleKey.O:
-                        Console.Beep(tonal[8], 200);
+                        Console.Beep(tonal[8], 100);
                         break;
 
                     case ConsoleKey.P:
-                        Console.Beep(tonal[9], 200);
+                        Console.Beep(tonal[9], 100);
                         break;
 
                     case ConsoleKey.Oem4:
-                        Console.Beep(tonal[10], 200);
+                        Console.Beep(tonal[10], 100);
                         break;
 
                     case ConsoleKey.Oem6:
-                        Console.Beep(tonal[11], 200);
+                        Console.Beep(tonal[11], 100);
                         break;
                 }
             }
