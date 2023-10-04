@@ -44,11 +44,11 @@ namespace ConsoleApp1
                 {
                     case ConsoleKey.F1:
                         change = key.Key;
-                        return change;
+                        octave_change(change);
                         break;
                     case ConsoleKey.F2:
                         change = key.Key;
-                        return change;
+                        octave_change(change);
                         break;
                     case ConsoleKey.Escape:
                         change = key.Key;
@@ -139,7 +139,7 @@ namespace ConsoleApp1
         static int[] octave_1()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.Writeline("Вы попали в првую октаву");
+            Console.WriteLine("Вы попали в првую октаву");
             Console.ResetColor();
             int[] firstOctave = new int[] { 261, 277, 293, 311, 329, 349, 369, 392, 415, 440, 466, 493 };
             return firstOctave;
@@ -147,7 +147,7 @@ namespace ConsoleApp1
         static int[] octave_2()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.Writeline("Вы попали в вторую октаву");
+            Console.WriteLine("Вы попали в вторую октаву");
             Console.ResetColor();
             int[] secondOctave = new int[] { 523, 554, 587, 622, 659, 698, 739, 784, 830, 880, 932, 987 };
             return secondOctave;
