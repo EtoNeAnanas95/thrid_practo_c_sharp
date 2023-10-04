@@ -27,7 +27,7 @@ namespace ConsoleApp1
             do
             {
                 tonal = octave_change(change);
-                change = pianino(tonal);
+                pianino(tonal);
             }
             while (change != ConsoleKey.Escape);
             Console.ForegroundColor = ConsoleColor.Red;
