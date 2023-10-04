@@ -128,7 +128,7 @@ namespace ConsoleApp1
                     string anekdot = Console.ReadLine();
                     if (anekdot == "да" || anekdot == "Да" || anekdot == "Yea" || anekdot == "Yes" || anekdot == "lf" || anekdot == "Lf")
                     {
-                        Console.Write("Штирлиц топил камин всю ночь \nна утро камин утонул\n\nПианино если что работает на первой актаве\n\n");
+                        Console.Write("\nШтирлиц топил камин всю ночь \nна утро камин утонул\n\nПианино если что работает на первой актаве\n\n");
                     }
                     else Console.WriteLine("ну и ладно\nПианино если что работает на первой актаве\n\n");
                     octave = octave_1();
@@ -139,7 +139,13 @@ namespace ConsoleApp1
         static int[] octave_1()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Вы попали в првую октаву");
+            Console.Write("Вы попали в");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(" пeрвую ");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("октаву");
             Console.ResetColor();
             int[] firstOctave = new int[] { 261, 277, 293, 311, 329, 349, 369, 392, 415, 440, 466, 493 };
             return firstOctave;
@@ -147,7 +153,13 @@ namespace ConsoleApp1
         static int[] octave_2()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Вы попали в вторую октаву");
+            Console.Write("Вы попали в");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(" вторую ");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("октаву");
             Console.ResetColor();
             int[] secondOctave = new int[] { 523, 554, 587, 622, 659, 698, 739, 784, 830, 880, 932, 987 };
             return secondOctave;

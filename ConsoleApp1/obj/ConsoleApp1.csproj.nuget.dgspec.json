@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eto_Ne_Ananas95\\Source\\Repos\\thrid_practo_c_sharp\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "C:\\Users\\Eto_Ne_Ananas95\\source\\repos\\thrid_practo_c_sharp\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eto_Ne_Ananas95\\Source\\Repos\\thrid_practo_c_sharp\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Users\\Eto_Ne_Ananas95\\source\\repos\\thrid_practo_c_sharp\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eto_Ne_Ananas95\\Source\\Repos\\thrid_practo_c_sharp\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\Eto_Ne_Ananas95\\source\\repos\\thrid_practo_c_sharp\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\Eto_Ne_Ananas95\\Source\\Repos\\thrid_practo_c_sharp\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectPath": "C:\\Users\\Eto_Ne_Ananas95\\source\\repos\\thrid_practo_c_sharp\\ConsoleApp1\\ConsoleApp1.csproj",
         "packagesPath": "C:\\Users\\Eto_Ne_Ananas95\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eto_Ne_Ananas95\\Source\\Repos\\thrid_practo_c_sharp\\ConsoleApp1\\obj\\",
+        "outputPath": "C:\\Users\\Eto_Ne_Ananas95\\source\\repos\\thrid_practo_c_sharp\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eto_Ne_Ananas95\\AppData\\Roaming\\NuGet\\NuGet.Config",
